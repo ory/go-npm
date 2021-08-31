@@ -13,13 +13,13 @@ const request = require('request'),
 // Mapping from Node's `process.arch` to Golang's `$GOARCH`
 const ARCH_MAPPING = {
     "ia32": "386",
-    "x64": "amd64",
+    "x64": "64-bit",
     "arm": "arm"
 };
 
 // Mapping between Node's `process.platform` to Golang's 
 const PLATFORM_MAPPING = {
-    "darwin": "darwin",
+    "darwin": "macOS",
     "linux": "linux",
     "win32": "windows",
     "freebsd": "freebsd"
@@ -160,7 +160,7 @@ function install(callback) {
 
     mkdirp.sync(opts.binPath);
     let ungz = zlib.createGunzip();
-    let untar = tar.Extract({path: opts.binPath});
+    let untar =  tar.x({path: opts.binPath});
 
     ungz.on('error', callback);
     untar.on('error', callback);
