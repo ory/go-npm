@@ -1,6 +1,6 @@
 {
   "name": "@ory/npm-bin",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Distribute and install Go binaries via NPM",
   "main": "index.js",
   "bin": {
